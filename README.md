@@ -24,9 +24,7 @@ In `workspaces/offboard_ws/` is an example of offboard controller ROS2 node call
 
 ![Potential Field](assets/field.gif "Potential Field")
 
-![Drone Video](assets/obst_avoid.webm "Drone Video")
-
-
+[obst_avoid.webm](https://github.com/user-attachments/assets/5c5cdcf5-0218-471d-ab1b-b5d3d01730b8)
 
 ### How to build `vff_controller`
 ```
