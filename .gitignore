@@ -1,0 +1,5 @@
+workspaces/PX4-Autopilot/
+workspaces/offboard_ws/src/px4_msgs
+workspaces/offboard_ws/build/
+workspaces/offboard_ws/install/
+workspaces/offboard_ws/log/

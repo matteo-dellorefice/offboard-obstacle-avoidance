@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "c17",
+            "includePath": [
+                "/workspaces/offboard_ws/install/px4_msgs/include/px4_msgs",
+                "/opt/ros/humble/include/**",
+                "/usr/include/eigen3"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17"
+        }
+    ],
+    "version": 4
+}

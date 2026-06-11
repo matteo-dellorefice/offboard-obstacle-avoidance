@@ -1,0 +1,45 @@
+{
+  "name": "PX4 ROS2 Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspaces",
+  "workspaceMount": "source=${localWorkspaceFolder}/workspaces,target=/workspaces,type=bind",
+
+  "mounts": [
+    // Persistent workspace for your code
+    // "source=${localWorkspaceFolder}/workspaces,target=/workspaces,type=bind",
+    // X11 forwarding for Gazebo GUI
+    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind",
+    "source=${localEnv:HOME}/.Xauthority,target=/root/.Xauthority,type=bind"
+  ],
+
+  "containerEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}",
+    "WORKSPACE_DIR": "/workspaces"
+  },
+
+  "runArgs": [
+    "--privileged",
+    "--network=host",
+    "--device=/dev/dri:/dev/dri"
+    // "--gpus=all"       // GPU acceleration for Gazebo
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools-extension-pack",  // C++ IntelliSense
+        "ms-vscode.cmake-tools",              // CMake integration
+        "ms-python.python",                   // Python debugging
+        "ms-azuretools.vscode-docker",        // Docker management
+        "redhat.vscode-yaml"                  // YAML validation
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "cmake.configureOnOpen": false,  // Don't auto-configure - let us control it
+        "python.defaultInterpreterPath": "/usr/bin/python3"
+      }
+    }
+  },
+  "postCreateCommand": "bash /tmp/post_create.sh"
+}
